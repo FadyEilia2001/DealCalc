@@ -29,7 +29,7 @@ function App() {
     setDataValues(prevState=>{
       return {
         ...prevState,
-        showSummary: !prevState.showSummary
+        showSummary: true
       }
     })
   }
@@ -50,7 +50,7 @@ function App() {
  
   const costPerSqft =  dataValues.purchasePrice / dataValues.initialSQFT || 0
   const totalProjectCost = parseFloat(dataValues.purchasePrice) + parseFloat(dataValues.financingCosts) + parseFloat(dataValues.acquisitionCosts) + parseFloat(dataValues.constructionCosts) + parseFloat(dataValues.sellingCosts) || 0
-  const totalSale = dataValues.salePerSqft * dataValues.finalSqft || 0
+  const totalSale = parseFloat(dataValues.salePerSqft) * parseFloat(dataValues.finalSqft) || 0
   const totalPL = totalSale - totalProjectCost || 0
   
 
@@ -60,6 +60,7 @@ function App() {
         <Form formData={dataValues} handleClick={collectData} btnClick={buttonClick}/>
         {!dataValues.showSummary && <h2 className='summary-title'>Summary</h2>}
         {dataValues.showSummary && <Summary costPerSqft={costPerSqft} totalCost={totalProjectCost} totalSale={totalSale} totalPL={totalPL} />}
+        <p className='author'>Developed By: <mail>Fadyeilia0613@gmail.com</mail></p>
     </div>
   )
 }
