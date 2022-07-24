@@ -8,6 +8,10 @@ body{
   font-size: 16px;
 }
 
+.App{
+  position: relative;
+}
+
 nav{
   height: 10vh;
  
@@ -165,6 +169,12 @@ form{
   transition-duration: .1s;
 }
 
+.author{
+  position: absolute;
+  right: 50px;
+  bottom: -90px;
+}
+
 @media (min-width: 768px) {
   .button-36 {
     padding: 0 2.6rem;
@@ -203,4 +213,8 @@ form{
     max-width: 350px;
     margin-bottom: 10px;
   }
+  .author{
+    padding: 20px;
+  }
 }
+
