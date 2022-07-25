@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Form from './Components/Form'
 import Nav from './Components/Nav'
 import Summary from './Components/Summary'
-
+import Table from './Components/Table'
 
 
 
@@ -60,6 +60,7 @@ function App() {
         <Form formData={dataValues} handleClick={collectData} btnClick={buttonClick}/>
         {!dataValues.showSummary && <h2 className='summary-title'>Summary</h2>}
         {dataValues.showSummary && <Summary costPerSqft={costPerSqft} totalCost={totalProjectCost} totalSale={totalSale} totalPL={totalPL} />}
+        <div className='table'><Table /></div>
         <p className='author'>Developed By: <mail>Fadyeilia0613@gmail.com</mail></p>
     </div>
   )

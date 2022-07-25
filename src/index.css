@@ -131,6 +131,14 @@ form{
   margin-top: 0;
 }
 
+.table{
+  margin: 0 auto;
+  max-width: 800px;
+  -webkit-box-shadow: 5px 4px 11px 0px rgba(0, 0, 0, 0.38); 
+  box-shadow: 5px 4px 11px 0px rgba(37, 28, 126, 0.38);
+  padding: 10px 5px;
+  color: white;
+}
 
 .button-container{
   width: 100%;
@@ -216,6 +224,10 @@ form{
   }
   .author{
     padding: 20px;
+  }
+
+  .table{
+    max-width: 350px;
   }
 }
 
