@@ -15,7 +15,7 @@ function App() {
 
   function collectData(event){
     
-    const {name, value, type} = event.target
+    const {name, value} = event.target
     setDataValues(prevState=>{
       return{
         ...prevState,
@@ -60,8 +60,11 @@ function App() {
         <Form formData={dataValues} handleClick={collectData} btnClick={buttonClick}/>
         {!dataValues.showSummary && <h2 className='summary-title'>Summary</h2>}
         {dataValues.showSummary && <Summary costPerSqft={costPerSqft} totalCost={totalProjectCost} totalSale={totalSale} totalPL={totalPL} />}
-        <div className='table'><Table /></div>
-        <p className='author'>Developed By: <mail>Fadyeilia0613@gmail.com</mail></p>
+        <div className='table'>
+          <h4 className='table-title'>Summary Table</h4>
+          <Table data={dataValues}/>
+        </div>
+        <p className='author'>Developed By: <a href="mailto:fadyeilia0613@Gmail.com">Fady Eilia</a></p>
     </div>
   )
 }
