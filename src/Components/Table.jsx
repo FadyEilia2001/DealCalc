@@ -27,47 +27,39 @@ const rows = [
     { 
         id: 1, 
         projectName: "", 
-        purchasePrice: props.data.purchasePrice, 
-        initialSQFT: props.data.initialSQFT ,
-        financingCosts: props.data.financingCosts,
-        acquisitionCosts: props.data.acquisitionCosts,
-        constructionCosts: props.data.constructionCosts,
-        sellingCosts: props.data.sellingCosts, 
-        finalSqft: props.data.finalSqft,
-        salePerSqft: props.data.salePerSqft,
-    },
-    { 
-        id: 2, 
-        projectName: "0", 
-        purchasePrice: props.data.purchasePrice, 
-        initialSQFT: props.data.initialSQFT ,
-        financingCosts: props.data.financingCosts,
-        acquisitionCosts: props.data.acquisitionCosts,
-        constructionCosts: props.data.constructionCosts,
-        sellingCosts: props.data.sellingCosts, 
-        finalSqft: props.data.finalSqft,
-        salePerSqft: props.data.salePerSqft,
-    },
-    { 
-        id: 3, 
-        projectName: "0", 
-        purchasePrice: props.data.purchasePrice, 
-        initialSQFT: props.data.initialSQFT ,
-        financingCosts: props.data.financingCosts,
-        acquisitionCosts: props.data.acquisitionCosts,
-        constructionCosts: props.data.constructionCosts,
-        sellingCosts: props.data.sellingCosts, 
-        finalSqft: props.data.finalSqft,
-        salePerSqft: props.data.salePerSqft,
+        purchasePrice: props.data[0].purchasePrice, 
+        initialSQFT: props.data[0].initialSQFT ,
+        financingCosts: props.data[0].financingCosts,
+        acquisitionCosts: props.data[0].acquisitionCosts,
+        constructionCosts: props.data[0].constructionCosts,
+        sellingCosts: props.data[0].sellingCosts, 
+        finalSqft: props.data[0].finalSqft,
+        salePerSqft: props.data[0].salePerSqft,
     },
 ]
 
+const row2 = props.data.map(item=>{
+    return { 
+        id: `${props.data.length}`, 
+        projectName: item.projectName, 
+        purchasePrice: item.purchasePrice, 
+        initialSQFT: item.initialSQFT ,
+        financingCosts: item.financingCosts,
+        acquisitionCosts: item.acquisitionCosts,
+        constructionCosts: item.constructionCosts,
+        sellingCosts: item.sellingCosts, 
+        finalSqft: item.finalSqft,
+        salePerSqft: item.salePerSqft,
+    }
+})
+
+console.log(row2)
 
   return (
     <div style={{ height: 400, width: '100%' }}>
         
       <DataGrid
-        rows={rows}
+        rows={row2}
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
