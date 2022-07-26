@@ -12,6 +12,7 @@ export default function DataTable(props) {
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
+    {field: 'delete', headerName: 'delete', width:100},
     { field: 'projectName', headerName: 'Project Title', width: 130 },
     { field: 'purchasePrice', headerName: 'Purchase Price', width: 130 },  
     { field: 'initialSQFT', headerName: 'Initial SQFT', width: 130 }, 
@@ -26,6 +27,9 @@ const columns = [
     { field: 'totalSale', headerName: 'Selling Price', width: 130 },
     { field: 'totalPL', headerName: 'Profit / Loss', width: 130 },
   ];
+
+
+ 
 
 const row2 = props.data.map((item, index)=>{
     return { 
@@ -43,8 +47,10 @@ const row2 = props.data.map((item, index)=>{
       totalProjectCost: item.totalProjectCost,
       totalSale: item.totalSale,
       totalPL: item.totalPL,
+      
     }
 })
+
 
 
   return (
@@ -55,6 +61,7 @@ const row2 = props.data.map((item, index)=>{
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
+        checkboxSelection
       />
     </div>
   );
