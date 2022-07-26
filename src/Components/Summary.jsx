@@ -13,6 +13,10 @@ export default function Summary(props) {
         <p className='summary-section-results'>Total Project Cost = ${props.totalCost}</p>
         <p className='summary-section-results'>Expected Total Sale Price = ${props.totalSale}</p>
         <p className='summary-section-results'>Total Profit or Loss = <span style={styles}>${props.totalPL}</span></p>
+
+        
+        <button onClick={props.handleBtn} className="button-36 table-btn" >Add to table</button>
+        
     </div>
   )
 }

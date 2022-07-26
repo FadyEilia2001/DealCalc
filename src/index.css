@@ -133,6 +133,10 @@ form{
   margin-top: 0;
 }
 
+.table-btn{
+  margin: 20px 0;
+}
+
 .table{
   margin: 0 auto;
   max-width: 775px;
