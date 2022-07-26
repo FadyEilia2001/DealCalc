@@ -60,6 +60,7 @@ form{
   margin-right: auto;
   margin-left: auto;
   padding: 20px 0;
+  border-radius: 15px;
 }
 
 .form-inputs{
@@ -97,8 +98,8 @@ form{
 
 .input{
   margin-left: 10px;
-  height: 1.4rem;
-  width: 4rem;
+  height: 1.7rem;
+  width: 6rem;
   text-indent: 3px;
   font-family: inherit;
 }
@@ -118,6 +119,7 @@ form{
   box-shadow: 5px 4px 11px 0px rgba(37, 28, 126, 0.38);
   max-width: 800px;
   margin: 20px auto;
+  border-radius: 15px;
 }
 
 .summary-section-title{
@@ -131,6 +133,27 @@ form{
   margin-top: 0;
 }
 
+.table-btn{
+  margin: 20px 0;
+}
+
+.table{
+  margin: 0 auto;
+  max-width: 775px;
+  -webkit-box-shadow: 5px 4px 11px 0px rgba(0, 0, 0, 0.38); 
+  box-shadow: 5px 4px 11px 0px rgba(37, 28, 126, 0.38);
+  color: white;
+  height: auto;
+  padding: 10px 15px;
+  border-radius: 15px;
+}
+
+.table-title{
+  color: #242424;
+  text-align: center;
+  font-size: 1.3rem;
+  padding-top: 5px;
+}
 
 .button-container{
   width: 100%;
@@ -174,6 +197,7 @@ form{
   position: absolute;
   right: 50px;
   bottom: -90px;
+  padding: 20px;
 }
 
 @media (min-width: 768px) {
@@ -216,6 +240,10 @@ form{
   }
   .author{
     padding: 20px;
+  }
+
+  .table{
+    max-width: 350px;
   }
 }
 
