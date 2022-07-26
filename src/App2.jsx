@@ -8,7 +8,9 @@ import Table from './Components/Table'
 
 function App() {
 
+// localStorage.clear()
 
+const [allDataValues, setAllDataValues] = useState((JSON.parse(localStorage.getItem("data"))) || [])
 
   function collectData(event) {
 
@@ -20,9 +22,8 @@ function App() {
         showSummary: false
       }
     })
+
   }
-
-
 
   //form Object
   const [dataValues, setDataValues] = useState({
@@ -40,7 +41,7 @@ function App() {
   })
 
   // all data
-  const [allDataValues, setAllDataValues] = useState((JSON.parse(localStorage.getItem("data"))) || [])
+  
 
 
   //calc results 
@@ -54,7 +55,7 @@ function App() {
   function buttonClick(event) {
     //prevent defualt refresh
     event.preventDefault()
-
+    
     //create summary
     setDataValues(prevState=>{
       return{
@@ -81,12 +82,15 @@ function App() {
 
   
 
-  function addToTable(){
+  function addToTable(e){
 
-
+    e.preventDefault()
+    
     setAllDataValues(prevValues => {
       return [...prevValues, dataValues]
     })
+
+    localStorage.setItem("data", JSON.stringify(allDataValues))
 
     setDataValues(prevState => {
       return {
@@ -95,7 +99,7 @@ function App() {
       }
     })
 
-    localStorage.setItem("data", JSON.stringify(allDataValues))
+    
   }
 
   return (
@@ -104,7 +108,7 @@ function App() {
       <Form formData={dataValues} handleClick={collectData} btnClick={buttonClick} />
       
       {dataValues.showSummary && <Summary handleBtn={addToTable} costPerSqft={costPerSqft} totalCost={totalProjectCost} totalSale={totalSale} totalPL={totalPL} />}
-      {dataValues.showTable && <div className='table'>
+      {allDataValues.length >= 1 && <div className='table'>
           <Table data={allDataValues} costPerSqft={costPerSqft}/>
         </div>
         }

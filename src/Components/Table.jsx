@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridToolbarContainer, GridToolbarExport } from '@mui/x-data-grid';
 
 // const columns = [
 //   { field: 'id', headerName: 'ID', width: 70 },
@@ -12,7 +12,6 @@ export default function DataTable(props) {
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
-    {field: 'delete', headerName: 'delete', width:100},
     { field: 'projectName', headerName: 'Project Title', width: 130 },
     { field: 'purchasePrice', headerName: 'Purchase Price', width: 130 },  
     { field: 'initialSQFT', headerName: 'Initial SQFT', width: 130 }, 
@@ -51,7 +50,13 @@ const row2 = props.data.map((item, index)=>{
     }
 })
 
-
+function MyExportButton() {
+  return (
+    <GridToolbarContainer>
+      <GridToolbarExport />
+    </GridToolbarContainer>
+  );
+}
 
   return (
     <div style={{ height: 400, width: '100%' }}>
@@ -62,6 +67,9 @@ const row2 = props.data.map((item, index)=>{
         pageSize={5}
         rowsPerPageOptions={[5]}
         checkboxSelection
+        components={{
+          Toolbar: MyExportButton,
+        }}
       />
     </div>
   );
