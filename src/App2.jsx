@@ -8,9 +8,9 @@ import Table from './Components/Table'
 
 function App() {
 
-// localStorage.clear()
+//localStorage.clear()
 
-const [allDataValues, setAllDataValues] = useState((JSON.parse(localStorage.getItem("data"))) || [])
+const [allDataValues, setAllDataValues] = useState([])
 
   function collectData(event) {
 
@@ -45,7 +45,8 @@ const [allDataValues, setAllDataValues] = useState((JSON.parse(localStorage.getI
 
 
   //calc results 
-  const costPerSqft = dataValues.purchasePrice / dataValues.initialSQFT || 0
+  const parsedCostSQFT = parseFloat(dataValues.purchasePrice / dataValues.initialSQFT).toFixed(2)
+  const costPerSqft = parsedCostSQFT || 0
   const totalProjectCost = parseFloat(dataValues.purchasePrice) + parseFloat(dataValues.financingCosts) + parseFloat(dataValues.acquisitionCosts) + parseFloat(dataValues.constructionCosts) + parseFloat(dataValues.sellingCosts) || 0
   const totalSale = parseFloat(dataValues.salePerSqft) * parseFloat(dataValues.finalSqft) || 0
   const totalPL = totalSale - totalProjectCost || 0
@@ -90,7 +91,7 @@ const [allDataValues, setAllDataValues] = useState((JSON.parse(localStorage.getI
       return [...prevValues, dataValues]
     })
 
-    localStorage.setItem("data", JSON.stringify(allDataValues))
+    // localStorage.setItem("data", JSON.stringify(allDataValues))
 
     setDataValues(prevState => {
       return {

@@ -1,9 +1,13 @@
+# Deal Analyzer 
+#### Video Demo:  https://www.youtube.com/watch?v=oUxAAklOmwA
+
+
 # Simple React Project to analyze new deals for Real estate investors
 
 The app starts by gathering some information from the user
 The app will do simple calculations based on the data provided, and there is an option to save the data to the table
 the user can export the table and save it to their local device
-
+The app is fully responsive to work on any screen
 
 # Overview
 	• A tool to calculate the costs, and assist investor in gathering all the required information, and it will produce an output report with final needed information to make a decision
