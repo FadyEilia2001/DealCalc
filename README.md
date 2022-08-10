@@ -1,3 +1,61 @@
+# Simple React Project to analyze new deals for Real estate investors
+
+The app starts by gathering some information from the user
+The app will do simple calculations based on the data provided, and there is an option to save the data to the table
+the user can export the table and save it to their local device
+
+
+# Overview
+	• A tool to calculate the costs, and assist investor in gathering all the required information, and it will produce an output report with final needed information to make a decision
+	
+# Functionality
+	• Take all projects costs
+	• Expected sales costs
+	• Populates an ROI report
+		○ Includes P/L
+		○ Includes Cash Needed (based on user input for %)
+
+# Inputs
+
+Total Project Costs
+
+	• Purchase Price
+		○ Field P-1
+		
+	• Total SQFT
+		○ Field P-2
+		
+	• Financing Costs
+		○ Field P-3
+
+	• Acquisition costs (including closing costs)
+		○ Field P-4
+	
+	• Selling Costs
+		○ Field P-5
+		
+	• Repairs/Build
+		○ Field P-6
+
+Project Sale Price
+
+	• Final Product total SQFT(it could be the same if it's a rehab)
+		○ Field S-1
+Expected sale price 
+
+# Output Report
+
+        • Price Per SQFT
+        • After repair cost Per SQFT
+        • Expected sale price per SQFT
+
+        • Total Project Costs
+        • Total Cash Needed
+        • Profit/Loss amount
+        • ROI
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
